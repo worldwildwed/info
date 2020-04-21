@@ -1,0 +1,101 @@
+body, html {
+  height: 100%;
+  overflow: hidden;
+}
+
+.bg--default {
+  background-color: #F5F5F5;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.image-zoom {
+  animation-name: zoom;
+  animation-duration: 1.4s;
+}
+
+.image-zoom-reverse {
+  animation-name: zoom;
+  animation-duration: 1.4s;
+  animation-direction: reverse;
+}
+
+@keyframes zoom {
+  from {background-size: cover;}
+  to {background-size: 1px 1px;}
+}
+
+/* @keyframes zoom {
+  from {height: 100%; width: 100%;}
+  to {height: 200px; width: 200px;}
+} */
+
+
+.scene {
+  display: none;
+  width: 200px;
+  height: 200px;
+  perspective: 600px;
+  margin: auto;
+  padding-top: 200px;
+}
+
+.cube {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+}
+
+.cube__face {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  border: 5px solid white;
+  line-height: 200px;
+  font-size: 20px;
+  font-weight: bold;
+  color: white;
+  text-align: center;
+}
+
+.cube__face--front  { transform: rotateY(  0deg) translateZ(100px); }
+.cube__face--right  { transform: rotateY( 90deg) translateZ(100px); }
+.cube__face--back   { transform: rotateY(180deg) translateZ(100px); }
+.cube__face--left   { transform: rotateY(-90deg) translateZ(100px); }
+.cube__face--top    { transform: rotateX( 90deg) translateZ(100px); }
+.cube__face--bottom { transform: rotateX(-90deg) translateZ(100px); }
+
+.bg--front  {
+  /* background: hsla(  0, 100%, 50%, 0.7); */
+  background-image: url("front.jpg");
+  background-size: cover;
+ }
+.bg--right  {
+  background-image: url("right.jpg");
+  background-size: cover;
+}
+.bg--back   {
+  background-image: url("back.jpg");
+  background-size: cover;
+}
+.bg--left   {
+  background-image: url("left.jpg");
+  background-size: cover;
+}
+.bg--top    {
+  /* background: hsla(240, 100%, 50%, 0.7);  */
+  background-image: url("top.jpg");
+  background-size: cover;
+}
+.bg--bottom {
+  background-image: url("bottom.jpg");
+  background-size: cover;
+}
+
+.cube { transition: transform 0.5s; }
