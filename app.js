@@ -1,5 +1,6 @@
 var scene = document.getElementById("main");
 var cube = document.querySelector(".cube");
+var title = document.getElementById("title"); 
 var current_x = 0;
 var current_y = 0;
 var current_z = 0;
@@ -231,4 +232,18 @@ function flip() {
   }
 }
 
+function blinkTitle() {
+  blink = setInterval(changeTitle, 3000);
+}
+
+function changeTitle() {
+  if (title.innerHTML.length == 26) {
+    title.innerHTML = "Press any arrow key :)"
+  }
+  else {
+    title.innerHTML = "Welcome to my portfolio..."
+  }
+}
+
+blinkTitle()
 window.addEventListener("keydown", main, false);
